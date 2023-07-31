@@ -5,8 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
 
 
@@ -18,20 +16,20 @@ public class Main {
         BufferedReader bi = new BufferedReader(
                 new FileReader(filePath));
 
-        String eachLine;
         HashMap<String, Course> courses = new HashMap<String, Course>();
-        Helper helper = new Helper();
-        processInput(bi, courses, helper);
+        processInput(bi, courses);
     }
 
-    private static void processInput(BufferedReader bi, HashMap<String, Course> courses, Helper helper) throws IOException {
+    private static void processInput(BufferedReader bi, HashMap<String, Course> courses) throws IOException {
         String eachLine;
+        ValidateInput validateInput = new ValidateInput();
+
         while ((eachLine = bi.readLine()) != null) {
             List<String> inputs = List.of(eachLine.split(" "));
 
             List<String> output = new ArrayList<>();
 
-            if (helper.validateCommands(inputs)) {
+            if (validateInput.validateCommands(inputs)) {
                 callActionMethod(courses, inputs, output);
 
             } else {
@@ -67,7 +65,6 @@ public class Main {
                         course1 = entry.getValue();
                     }
                 }
-                ;
                 if (course1 != null) {
                     output = course1.cancelRegistration(registrationId);
                 } else
