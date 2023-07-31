@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class CourseController {
-    CourseService courseService = new CourseService();
-    ValidateInput validateInput = new ValidateInput();
+    private CourseService courseService = new CourseService();
+    private ValidateInput validateInput = new ValidateInput();
     HashMap<String, Integer> coursesAndParameters = courseService.getCoursesAndParameters();
     public List<String> processInput(List<String> inputs) {
         List<String> output = new ArrayList<>();
