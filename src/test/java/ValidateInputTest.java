@@ -28,7 +28,7 @@ public class ValidateInputTest {
         inputs.add("ADD-COURSE-OFFERING");
         inputs.add("CourseA");
         inputs.add("Don");
-        inputs.add("23/2/2023");
+        inputs.add("2023/2/23");
         inputs.add("1");
         inputs.add("3");
         assertTrue(validateInput.validateCommands(commandsAndParameters, inputs));
@@ -79,7 +79,7 @@ public class ValidateInputTest {
         inputs.add("ADD-COURSE-OFFERING");
         inputs.add("CourseA");
         inputs.add("Don");
-        inputs.add("23/2/2023");
+        inputs.add("2023/2/23");
         assertFalse(validateInput.validateCommands(commandsAndParameters, inputs));
 
         inputs.clear();

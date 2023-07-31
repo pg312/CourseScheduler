@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    private static CourseController courseController = new CourseController();
     public static void main(String[] args) throws IOException {
 
         Scanner scanner = new Scanner(System.in);
@@ -19,14 +20,10 @@ public class Main {
     }
     private static void processInput(BufferedReader bi) throws IOException {
         String eachLine;
-        CourseController courseController = new CourseController();
-
         while ((eachLine = bi.readLine()) != null) {
             List<String> inputs = List.of(eachLine.split(" "));
             List<String> output = courseController.processInput(inputs);
             output.forEach(System.out::println);
         }
     }
-
-
 }

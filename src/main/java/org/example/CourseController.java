@@ -25,11 +25,11 @@ public class CourseController {
                 output = courseService.addCourse(parameters);
                 break;
             case "REGISTER":
-                Employee employee = new Employee(parameters.get(1));
-                output = courseService.addEmployeeToCourse(employee, parameters.get(2));
+                Employee employee = new Employee(parameters.get(0));
+                output = courseService.addEmployeeToCourse(employee, parameters.get(1));
                 break;
             case "ALLOT-COURSE":
-                courseService.allotCourse(parameters.get(1));
+                output = courseService.allotCourse(parameters.get(0));
                 break;
             case "CANCEL":
                 output = courseService.cancelRegistration(parameters);

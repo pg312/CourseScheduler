@@ -62,9 +62,9 @@ public class Course {
         return "CANCEL_ACCEPTED";
     }
     public String addEmployee(Employee employee) {
-        String registrationId = "REG-COURSE" + employee.getName() + this.courseTitle;
+        String registrationId = "REG-COURSE-" + employee.getName() +"-"+ this.courseTitle;
         this.registrationList.put(registrationId, employee);
-        this.status = registrationList.size() > this.minCapacity ? "ACCEPTED" : "COURSE_CANCELLED";
+        this.status = "ACCEPTED";
         return registrationId;
     }
 }
