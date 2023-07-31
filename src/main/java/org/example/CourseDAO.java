@@ -1,14 +1,10 @@
 package org.example;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class CourseDAO {
-
-
-
-    private static HashMap<String, Integer> commandsAndParameters = new HashMap<String, Integer>();
-    HashMap<String, Course> courses = new HashMap<>();
+    private static final HashMap<String, Integer> commandsAndParameters = new HashMap<String, Integer>();
+    private HashMap<String, Course> courses = new HashMap<>();
 
     CourseDAO() {
         commandsAndParameters.put("ADD-COURSE-OFFERING", 5);
@@ -16,7 +12,6 @@ public class CourseDAO {
         commandsAndParameters.put("ALLOT-COURSE", 1);
         commandsAndParameters.put("CANCEL", 1);
     }
-
     public static HashMap<String, Integer> getCommandsAndParameters() {
         return commandsAndParameters;
     }
@@ -34,21 +29,19 @@ public class CourseDAO {
     }
 
     public Course allotCourse(String courseOfferingId) {
-        Course course= courses.get(courseOfferingId);
+        Course course = courses.get(courseOfferingId);
         course.setCourseAllotmentDone(true);
         return course;
     }
-
     private Course getCourseByName(String courseName) {
         for (String key :
                 courses.keySet()) {
-            if(key.contains(courseName))
+            if (key.contains(courseName))
                 return courses.get(key);
 
         }
         return null;
     }
-
     public String cancelRegistration(String courseName, String registrationId) {
         Course course = getCourseByName(courseName);
         return course.cancelRegistration(registrationId);

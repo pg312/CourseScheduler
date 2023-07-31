@@ -1,9 +1,8 @@
 package org.example;
 
 public class Employee {
-
-    private String mail;
-    private String employeeName;
+    private final String mail;
+    private final String employeeName;
 
     public Employee(String mail) {
         this.mail = mail;

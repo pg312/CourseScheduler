@@ -3,26 +3,19 @@ package org.example;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class CourseController {
-
     CourseService courseService = new CourseService();
     ValidateInput validateInput = new ValidateInput();
     HashMap<String, Integer> coursesAndParameters = courseService.getCoursesAndParameters();
-
-
     public List<String> processInput(List<String> inputs) {
         List<String> output = new ArrayList<>();
-        if(validateInput.validateCommands(coursesAndParameters, inputs)){
+        if (validateInput.validateCommands(coursesAndParameters, inputs)) {
             output = callActionMethod(inputs);
-        }
-        else
-            output.add("INPUT_ERROR");
+        } else output.add("INPUT_ERROR");
         return output;
 
     }
-
     private List<String> callActionMethod(List<String> inputs) {
         List<String> output = new ArrayList<>();
         String command = inputs.get(0);

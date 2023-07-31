@@ -3,11 +3,10 @@ package org.example;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
-
-
     public static void main(String[] args) throws IOException {
 
         Scanner scanner = new Scanner(System.in);
@@ -18,7 +17,6 @@ public class Main {
 
         processInput(bi);
     }
-
     private static void processInput(BufferedReader bi) throws IOException {
         String eachLine;
         CourseController courseController = new CourseController();
@@ -28,7 +26,7 @@ public class Main {
             List<String> output = courseController.processInput(inputs);
             output.forEach(System.out::println);
         }
-        }
+    }
 
 
 }
