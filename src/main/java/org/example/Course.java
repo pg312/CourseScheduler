@@ -64,7 +64,7 @@ public class Course {
     public String addEmployee(Employee employee) {
         String registrationId = "REG-COURSE" + employee.getName() + this.courseTitle;
         this.registrationList.put(registrationId, employee);
-        this.status = registrationList.size() > this.maxCapacity ? "ACCEPTED" : "COURSE_CANCELLED";
+        this.status = registrationList.size() > this.minCapacity ? "ACCEPTED" : "COURSE_CANCELLED";
         return registrationId;
     }
 }
